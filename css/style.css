@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #171717;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 1fr;
+  margin: 0px;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #171717;
+  margin: 5px;
+}
+
+p {
+  color: #171717;
+}
+a {
+  color: #171717;
+}
+
+.header {
+  width: 100vw;
+}
+
+.notification {
+  text-align: center;
+  background: #171717;
+  color: #fff;
+  padding: 5px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  font-size: 16px;
+  padding: 5px 20px;
+}
+
+.toggle-container,
+.cart-menu {
+  font-size: 24px;
+}
+
+.carousel {
+  background: #312ac6;
+  max-height: 600px;
+  height: auto;
+  display: flex;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.splide {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.splide__list {
+  display: flex;
+  justify-content: center;
+}
+
+.splide__slide {
+  display: flex;
+  justify-content: center;
+}
+.splide img {
+  max-width: 400px;
+  width: 90%;
+  max-height: 550px;
+  height: auto;
+  box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper {
+  background-color: #fff;
+  margin: 30px 200px;
+  box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.75);
+}
