@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nicomauvecin/libreria-ecommerce#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@splidejs/splide": "^2.4.21",
     "bootstrap": "^5.1.1"
   }
 }
