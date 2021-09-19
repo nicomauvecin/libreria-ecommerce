@@ -3,7 +3,7 @@ const app = document.querySelector('#app');
 export const renderHTML = () => {
   app.innerHTML = `
   <header class="header">
-  <div class="notification">ENVIOS GRATIS DESDE $4000 EN TODO EL PAIS.</div>
+  <div class="notification">ENVIOS GRATIS A TODO EL PAIS DESDE $4000.</div>
   <nav class="navbar">
     <div class="toggle-container">☰</div>
     <div class="brand-container">
@@ -31,9 +31,63 @@ export const renderHTML = () => {
 </div>
 </section>
 <div class="wrapper">
-<section class="products-container">
-</section>
+<div class="menu-container">
+    <h2>Categorias</h2>
+    <ul id="menu"></ul>
 </div>
-
+<div class="products-container" id="container">
+</div>
+</div>
     `;
 };
+
+export function loading() {
+  const container = document.querySelector('#container');
+  const menu = document.querySelector('#menu');
+
+  menu.innerHTML = `<h2 class="loading">Cargando...</h2>`;
+
+  container.innerHTML = `
+    <h2 class="loading">Cargando...</h2>
+    `;
+}
+
+export async function renderMenu(cb) {
+  const respuesta = await cb();
+  const menu = document.querySelector('#menu');
+  menu.innerHTML = '';
+  respuesta.forEach((element) => {
+    menu.innerHTML += `
+      <li class="menu-item">
+      <span data-id="${element.category_id}">${element.name}</span>
+      </li>
+      `;
+  });
+}
+
+export async function renderProducts(categoria, inicial, final, cb) {
+  const respuesta = await cb(categoria, inicial, final);
+  const container = document.querySelector('#container');
+  container.innerHTML = '';
+  container.classList.add('active');
+  respuesta.forEach((element) => {
+    container.innerHTML += `
+    <div class="card-product" data-id="${element.ID}"">
+        
+            <div class="info-product">
+            <div class="info">
+                <h3>${element.title}</h3>
+                <h4>Autor: ${element.author}</h4>
+                </div>
+            <div class="action">
+            <p id="more-info">Ver más info</p>
+        <button class="btn btn-principal">Agregar al carrito</button>
+        </div>            
+        </div>
+        <div class="img-product">
+            <img src="${element.cover}">
+        </div>
+    </div>
+    `;
+  });
+}
