@@ -72,21 +72,13 @@ export async function renderProducts(categoria, inicial, final, cb) {
   container.classList.add('active');
   respuesta.forEach((element) => {
     container.innerHTML += `
-    <div class="card-product" data-id="${element.ID}"">
-        
-            <div class="info-product">
-            <div class="info">
-                <h3>${element.title}</h3>
-                <h4>Autor: ${element.author}</h4>
-                </div>
-            <div class="action">
-            <p id="more-info">Ver más info</p>
+    <div class="card-book" data-id="${element.ID}"">
+      <img class="desvanecer" src="${element.cover}">
+      <div class="info-book">
+        <h3>${element.title}</h3>
+        <button class="btn btn-principal">Ver Info</button>
         <button class="btn btn-principal">Agregar al carrito</button>
-        </div>            
-        </div>
-        <div class="img-product">
-            <img src="${element.cover}">
-        </div>
+      </div>
     </div>
     `;
   });
