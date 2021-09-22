@@ -14,8 +14,6 @@ export const renderHTML = () => {
       <span id="cart">1</span>
     </div>
   </nav>
-  <div class="menu-container"></div>
-  <div class="cart-container"></div>
 </header>
 <section class="carousel">
 <div class="splide" id="splide">
@@ -76,6 +74,8 @@ export async function renderProducts(categoria, inicial, final, cb) {
       <img class="desvanecer" src="${element.cover}">
       <div class="info-book">
         <h3>${element.title}</h3>
+        <img src="../static/stars.png">
+        <h4>$<span id="price">9.99</span></h4>
         <button class="btn btn-principal">Ver Info</button>
         <button class="btn btn-principal">Agregar al carrito</button>
       </div>
