@@ -100,10 +100,36 @@ export function clickHandler(
     await cbRenderBookData(response);
   };
 
+  const cart = document.querySelector('#cart');
+  cart.onclick = () => {
+    console.log('asd');
+    cbRenderCartHTML();
+  };
 }
 
 const modalBody = document.querySelector('.modal-body');
 const modalFooter = document.querySelector('.modal-footer');
+
+export function renderModalCart() {
+  modalBody.innerHTML = `
+  <div class="modal-info">
+    <h3 id="modal-book-title"></h4>
+    <h5>$<span id="modal-book-price">9.99</span></h5>
+  </div>
+  <div class="modal-img">
+    <img src="" id="modal-book-img">
+  </div> 
+  `;
+
+  modalFooter.innerHTML = `
+  <button type="button" class="btn btn-principal">
+    Vaciar Carrito
+  </button>
+  <button type="button" class="btn btn-secundario" data-dismiss="modal">
+    Comprar
+  </button>
+  `;
+}
 
 export function renderModalBook() {
   modalBody.innerHTML = `
