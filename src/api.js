@@ -13,3 +13,9 @@ export async function getCategories() {
   const responseJSON = await response.json();
   return responseJSON;
 }
+
+export async function getBookData(id) {
+  const response = await fetch(`${API_URL}/?id=${id}`);
+  const responseJSON = await response.json();
+  return responseJSON;
+}
