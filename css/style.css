@@ -172,6 +172,20 @@ a {
   color: #fff;
 }
 
+.btn-secundario {
+  background-color: #fff;
+  border: 1px solid #171717;
+  border-radius: 5px;
+  color: #171717;
+  transition: 0.5s ease;
+  margin: 5px;
+}
+
+.btn-secundario:hover {
+  background-color: #171717;
+  color: #fff;
+}
+
 .card-book {
   position: relative;
   width: 250px;
@@ -231,4 +245,54 @@ a {
 
 .info-book img {
   width: 50%;
+}
+
+.modal-content {
+  border-radius: 5px;
+  box-shadow: 1px 1px 13px 0px rgba(0, 0, 0, 0.75);
+  background: #312ac6;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.modal-content h3,
+.modal-content h4,
+.modal-content h5,
+.modal-content p {
+  color: #fff;
+  margin: 5px;
+}
+
+.modal-content .btn {
+  font-size: 14px;
+}
+
+.modal-content .btn-principal {
+  background: #312ac6;
+  border: 1px solid #fff;
+}
+
+.modal-content .btn-principal:hover {
+  background: #171717;
+  color: #fff;
+  border: 1px solid #171717;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modal-body .modal-info h3 {
+  font-weight: 600;
+}
+
+.modal-body .modal-info p {
+  font-size: 12px;
 }

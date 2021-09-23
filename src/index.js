@@ -1,7 +1,15 @@
-import { getCategories, getData } from './api.js';
-import { loading, renderHTML, renderProducts, renderMenu } from './ui.js';
+import { getBookData, getCategories, getData } from './api.js';
+import {
+  loading,
+  renderHTML,
+  renderProducts,
+  renderMenu,
+  clickHandler,
+  renderModalBook,
+  renderBookData,
+  renderModalCart,
+} from './ui.js';
 
-const app = document.querySelector('#app');
 const initialCategory = 'programacion';
 const initialLimit = 0;
 const finalLimit = 32;
@@ -17,5 +25,6 @@ async function init() {
   loading();
   await renderMenu(getCategories);
   await renderProducts(initialCategory, initialLimit, finalLimit, getData);
+  clickHandler(getBookData, renderModalBook, renderBookData, renderModalCart);
 }
 init();
