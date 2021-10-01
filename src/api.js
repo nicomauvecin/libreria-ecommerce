@@ -1,8 +1,8 @@
 const API_URL = 'https://www.etnassoft.com/api/v1/get/';
 
-export async function getData(category, initial, limit) {
+export async function getData(category, limit = 32) {
   const response = await fetch(
-    `${API_URL}/?category=${category}&num_items=${limit}&criteria=most_viewed`
+    `${API_URL}/?category_id=${category}&num_items=${limit}&criteria=most_viewed`
   );
   const responseJSON = await response.json();
   return responseJSON;
