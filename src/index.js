@@ -1,4 +1,5 @@
 import { getBookData, getCategories, getData } from './api.js';
+import { addCart, clearCart, clearItem } from './cart.js';
 import {
   loading,
   renderHTML,
@@ -10,9 +11,7 @@ import {
   renderModalCart,
 } from './ui.js';
 
-const initialCategory = 'programacion';
-const initialLimit = 0;
-const finalLimit = 32;
+const category = 220;
 
 async function init() {
   renderHTML();
@@ -24,7 +23,16 @@ async function init() {
 
   loading();
   await renderMenu(getCategories);
-  await renderProducts(initialCategory, initialLimit, finalLimit, getData);
-  clickHandler(getBookData, renderModalBook, renderBookData, renderModalCart);
+  await renderProducts(category, getData);
+  clickHandler(
+    getData,
+    getBookData,
+    renderModalBook,
+    renderBookData,
+    renderModalCart,
+    addCart,
+    clearCart,
+    clearItem
+  );
 }
 init();
